@@ -56,7 +56,11 @@ final class FileManagerService: FileManagerServiceProtocol {
     
     func createFile(name: String, contents: Data) {
         let newFileURL = currentWorkingDirectory.appending(path: name)
-        FileManager.default.createFile(atPath: newFileURL.path(), contents: contents)
+        do {
+            try contents.write(to: newFileURL)
+        } catch {
+            print(error.localizedDescription)
+        }
         
     }
     

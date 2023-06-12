@@ -100,9 +100,8 @@ extension TableViewController: ImagePickerDelegate {
         
         if let jpegData = image.jpegData(compressionQuality: 0.8) {
             fileManagerService.createFile(name: imageName, contents: jpegData)
-            tableView.reloadData()
         }
-        
+        tableView.reloadData()
         dismiss(animated: true)
     }
 }
