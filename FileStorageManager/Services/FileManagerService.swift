@@ -37,7 +37,7 @@ final class FileManagerService: FileManagerServiceProtocol {
         
         for i in 0..<objectsInDirectory.count {
             let url = objectsInDirectory[i]
-            if isDirectory(atPath: url.path()) {
+            if isDirectory(atPath: url.path(percentEncoded: false)) {
                 contentsOfDirectory.append(Content(contentType: .folder(url)))
             } else {
                 contentsOfDirectory.append(Content(contentType: .file(url)))
