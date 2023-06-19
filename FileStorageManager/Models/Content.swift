@@ -16,6 +16,7 @@ struct Content {
     }
     
     var contentType: ContentType
+    var name: String
     
     var url: URL {
         switch contentType {

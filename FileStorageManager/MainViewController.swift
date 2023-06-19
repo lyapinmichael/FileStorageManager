@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  TableViewController.swift >>> MainViewController.swift
 //  FileStorageManager
 //
 //  Created by Ляпин Михаил on 08.06.2023.
@@ -7,16 +7,21 @@
 
 import UIKit
 
-final class TableViewController: UITableViewController {
+final class MainViewController: UITableViewController {
     
 
     @IBAction func addImageButton(_ sender: UIBarButtonItem) {
-        presentImagePicker(delegate: self)
+        ImagePicker.shared.presentPicker(in: self, completion: { [weak self] imageName, imageData in
+            self?.fileManagerService.createFile(name: imageName, contents: imageData)
+            CurrentFileManagerService.shared.sort()
+            self?.tableView.reloadData()
+        })
     }
     
     @IBAction func addFolderButton(_ sender: UIBarButtonItem) {
         self.presentTextPicker(title: "Enter folder name") { [weak self] text in
             self?.fileManagerService.createDirectory(name: text)
+            CurrentFileManagerService.shared.sort()
             self?.tableView.reloadData()
         }
         
@@ -28,7 +33,14 @@ final class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CurrentFileManagerService.shared.currentService = self.fileManagerService as! FileManagerService
+        CurrentFileManagerService.shared.sort()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -38,7 +50,7 @@ final class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fileManagerService.contentsOfDirectory().count
+        return fileManagerService.contentsOfDirectory.count
     }
 
     
@@ -47,7 +59,7 @@ final class TableViewController: UITableViewController {
         let cell = UITableViewCell()
         var configuration = UIListContentConfiguration.cell()
         
-        let tableContent = fileManagerService.contentsOfDirectory()
+        let tableContent = fileManagerService.contentsOfDirectory
         configuration.text = tableContent[indexPath.row].url.lastPathComponent
         
         switch tableContent[indexPath.row].contentType {
@@ -65,10 +77,10 @@ final class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let tableContent = fileManagerService.contentsOfDirectory()
+        let tableContent = fileManagerService.contentsOfDirectory
         
         if case .folder(let url) = tableContent[indexPath.row].contentType {
-            TableViewController.push(from: self, folderService: FileManagerService(atDirectory: url))
+            MainViewController.push(from: self, folderService: FileManagerService(atDirectory: url))
         }
     }
     
@@ -82,26 +94,12 @@ final class TableViewController: UITableViewController {
     }
 }
 
-extension TableViewController {
-    static func push(from controller: TableViewController, folderService: FileManagerService) {
-        guard let tableController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TableViewController") as? TableViewController else { return }
+extension MainViewController {
+    static func push(from controller: MainViewController, folderService: FileManagerService) {
+        guard let tableController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TableViewController") as? MainViewController else { return }
         tableController.fileManagerService = folderService
         tableController.title = folderService.currentWorkingDirectory.lastPathComponent
         controller.navigationController?.pushViewController(tableController, animated: true)
         
-    }
-}
-
-extension TableViewController: ImagePickerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
-        
-        let imageName = UUID().uuidString
-        
-        if let jpegData = image.jpegData(compressionQuality: 0.8) {
-            fileManagerService.createFile(name: imageName, contents: jpegData)
-        }
-        tableView.reloadData()
-        dismiss(animated: true)
     }
 }

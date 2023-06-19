@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X62-3A-SxK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ie9-Mn-c2X">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Files-->
+        <!--Документы-->
         <scene sceneID="Jt3-nJ-ghD">
             <objects>
-                <tableViewController storyboardIdentifier="TableViewController" id="vHO-dx-dQq" customClass="TableViewController" customModule="FileStorageManager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableViewController" id="vHO-dx-dQq" customClass="MainViewController" customModule="FileStorageManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7cB-2D-Ghf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +22,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Files" id="TeQ-NG-oNA">
+                    <navigationItem key="navigationItem" title="Документы" style="browser" id="TeQ-NG-oNA">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="folder.badge.plus" catalog="system" id="HHW-cs-J7G">
                                 <connections>
@@ -39,32 +40,207 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sc4-B5-3wi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="-66"/>
+            <point key="canvasLocation" x="5347.826086956522" y="-391.07142857142856"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fxg-js-gMp">
+        <!--Login View Controller-->
+        <scene sceneID="Rcw-3a-lt9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X62-3A-SxK" sceneMemberID="viewController">
+                <viewController id="I5x-08-iaP" customClass="LoginViewController" customModule="FileStorageManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yyG-YR-1sm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29K-j6-zsv">
+                                <rect key="frame" x="101" y="481" width="212" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="I5x-08-iaP" eventType="touchUpInside" id="eSX-Dw-YXb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль " minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="FgE-AG-iMK">
+                                <rect key="frame" x="101" y="431" width="212" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KIf-XL-vea"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KIf-XL-vea" firstAttribute="trailing" secondItem="FgE-AG-iMK" secondAttribute="trailing" constant="101" id="02g-9b-MPg"/>
+                            <constraint firstItem="FgE-AG-iMK" firstAttribute="top" secondItem="KIf-XL-vea" secondAttribute="top" constant="343" id="6mr-cf-Qin"/>
+                            <constraint firstItem="KIf-XL-vea" firstAttribute="trailing" secondItem="29K-j6-zsv" secondAttribute="trailing" constant="101" id="Ljw-pK-zE9"/>
+                            <constraint firstItem="29K-j6-zsv" firstAttribute="leading" secondItem="KIf-XL-vea" secondAttribute="leading" constant="101" id="MGF-5D-QSW"/>
+                            <constraint firstItem="29K-j6-zsv" firstAttribute="top" secondItem="FgE-AG-iMK" secondAttribute="bottom" constant="16" id="a5n-aR-0Do"/>
+                            <constraint firstItem="FgE-AG-iMK" firstAttribute="leading" secondItem="KIf-XL-vea" secondAttribute="leading" constant="101" id="hsh-fd-RfL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5U5-tN-ItO"/>
+                    <connections>
+                        <outlet property="loginButton" destination="29K-j6-zsv" id="Qf6-Yq-hti"/>
+                        <outlet property="passwordField" destination="FgE-AG-iMK" id="A0h-LT-OxD"/>
+                        <segue destination="7HB-yV-8bg" kind="show" identifier="pushToMainTable" id="SYT-s6-Yjx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8BY-UZ-W61" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2495.6521739130435" y="-66.294642857142861"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="AsZ-i6-EbU">
+            <objects>
+                <tableViewController id="57U-au-Jiy" customClass="SettingTableController" customModule="FileStorageManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7BW-YX-qEe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="57U-au-Jiy" id="ld6-jp-ciP"/>
+                            <outlet property="delegate" destination="57U-au-Jiy" id="oJS-sz-g04"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Настройки" style="browser" id="5rN-KT-dH9"/>
+                    <connections>
+                        <segue destination="Vi4-An-RZ5" kind="presentation" identifier="presentChangePasswordView" id="aGZ-IP-2Ii"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXT-Z9-cLv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5347.826086956522" y="270.53571428571428"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="7sV-er-x6u">
+            <objects>
+                <viewController id="Vi4-An-RZ5" customClass="ChangePasswordViewController" customModule="FileStorageManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cQy-2J-kwn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrs-LO-3L5">
+                                <rect key="frame" x="101" y="451" width="212" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сменить пароль "/>
+                                <connections>
+                                    <action selector="changePasswordButton:" destination="Vi4-An-RZ5" eventType="touchUpInside" id="C8a-Vj-dq8"/>
+                                    <action selector="loginButton:" destination="I5x-08-iaP" eventType="touchUpInside" id="Gjp-zQ-9Jn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите новый пароль " minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NXk-RK-U75">
+                                <rect key="frame" x="101" y="401" width="212" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VZZ-g4-tmP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VZZ-g4-tmP" firstAttribute="trailing" secondItem="NXk-RK-U75" secondAttribute="trailing" constant="101" id="36O-DM-7Ad"/>
+                            <constraint firstItem="lrs-LO-3L5" firstAttribute="top" secondItem="NXk-RK-U75" secondAttribute="bottom" constant="16" id="4Hw-22-4g8"/>
+                            <constraint firstItem="lrs-LO-3L5" firstAttribute="leading" secondItem="VZZ-g4-tmP" secondAttribute="leading" constant="101" id="5rF-Q4-m4a"/>
+                            <constraint firstItem="NXk-RK-U75" firstAttribute="top" secondItem="VZZ-g4-tmP" secondAttribute="top" constant="401" id="QZO-Hf-Sa1"/>
+                            <constraint firstItem="NXk-RK-U75" firstAttribute="leading" secondItem="VZZ-g4-tmP" secondAttribute="leading" constant="101" id="bWs-TL-z8S"/>
+                            <constraint firstItem="VZZ-g4-tmP" firstAttribute="trailing" secondItem="lrs-LO-3L5" secondAttribute="trailing" constant="101" id="nYL-P3-0Lc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newPasswordField" destination="NXk-RK-U75" id="hvs-KR-ZkD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fs-5j-4Fe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6256.521739130435" y="270.53571428571428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Fjs-FJ-7R6">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7HB-yV-8bg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CYc-sK-Dh0">
+                    <navigationItem key="navigationItem" id="aQz-5e-R1O"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gBe-9q-GNz">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7Kf-fw-Sac" kind="relationship" relationship="viewControllers" id="h3W-vH-PXS"/>
+                        <segue destination="WJC-j7-yQr" kind="relationship" relationship="viewControllers" id="yMT-Ma-ZMJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2VL-TC-RKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3376.811594202899" y="-66.294642857142861"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="TPx-MX-AUB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ie9-Mn-c2X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9hg-wi-vQu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Q4-Lb-Dyp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vHO-dx-dQq" kind="relationship" relationship="rootViewController" id="vdF-To-lFe"/>
+                        <segue destination="I5x-08-iaP" kind="relationship" relationship="rootViewController" id="d1q-ew-6gb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XfJ-iK-f0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXW-bk-CzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753.62318840579712" y="-65.625"/>
+            <point key="canvasLocation" x="1585.5072463768117" y="-66.294642857142861"/>
+        </scene>
+        <!--Файлы-->
+        <scene sceneID="Ery-eO-iuu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Kf-fw-Sac" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Файлы" image="folder.fill" catalog="system" id="mDH-eN-7S8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gW1-YU-5uH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vHO-dx-dQq" kind="relationship" relationship="rootViewController" id="bui-7S-TEu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7AK-Gb-xL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4437.68115942029" y="-391.07142857142856"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="SFA-SV-lGq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WJC-j7-yQr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Настройки" image="gear" catalog="system" id="v8v-hU-8n3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jRs-Bw-GKB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="57U-au-Jiy" kind="relationship" relationship="rootViewController" id="OaN-Q5-JJ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyK-BN-Smt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4437.68115942029" y="270.53571428571428"/>
         </scene>
     </scenes>
     <resources>
         <image name="folder.badge.plus" catalog="system" width="128" height="92"/>
+        <image name="folder.fill" catalog="system" width="128" height="96"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="photo.on.rectangle.angled" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
