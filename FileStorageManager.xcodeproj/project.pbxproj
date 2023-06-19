@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		EC095B5F2A34531C00F715AE /* UIViewController+TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC095B5E2A34531C00F715AE /* UIViewController+TextPicker.swift */; };
 		EC095B612A366E2900F715AE /* UIViewController+PresentImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC095B602A366E2800F715AE /* UIViewController+PresentImagePicker.swift */; };
+		EC7E58602A3C89A400F03E3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E585F2A3C89A400F03E3D /* LoginViewController.swift */; };
+		EC7E58632A3C953100F03E3D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC7E58622A3C953100F03E3D /* IQKeyboardManagerSwift */; };
+		EC7E58662A3CB83B00F03E3D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E58652A3CB83B00F03E3D /* LoginViewModel.swift */; };
+		EC7E58692A3CDC3100F03E3D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E58682A3CDC3100F03E3D /* ImagePicker.swift */; };
+		EC7E586C2A3DFD8700F03E3D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC7E586B2A3DFD8700F03E3D /* KeychainSwift */; };
+		EC7E586E2A3F7FAD00F03E3D /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E586D2A3F7FAD00F03E3D /* UIViewController+PresentAlert.swift */; };
+		EC7E58712A3F881B00F03E3D /* SettingTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E58702A3F881B00F03E3D /* SettingTableController.swift */; };
+		EC7E58732A3F96A700F03E3D /* CurrentFileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E58722A3F96A600F03E3D /* CurrentFileManagerService.swift */; };
+		EC7E58752A40EB4100F03E3D /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E58742A40EB4100F03E3D /* ChangePasswordViewController.swift */; };
 		ECF59D4E2A3263FD002BEE93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF59D4D2A3263FD002BEE93 /* AppDelegate.swift */; };
 		ECF59D502A3263FD002BEE93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF59D4F2A3263FD002BEE93 /* SceneDelegate.swift */; };
 		ECF59D552A3263FD002BEE93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF59D532A3263FD002BEE93 /* Main.storyboard */; };
 		ECF59D572A3263FE002BEE93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF59D562A3263FE002BEE93 /* Assets.xcassets */; };
 		ECF59D5A2A3263FE002BEE93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF59D582A3263FE002BEE93 /* LaunchScreen.storyboard */; };
-		ECF59D622A3264CF002BEE93 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF59D612A3264CF002BEE93 /* TableViewController.swift */; };
+		ECF59D622A3264CF002BEE93 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF59D612A3264CF002BEE93 /* MainViewController.swift */; };
 		ECF59D662A3265C6002BEE93 /* FileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF59D652A3265C6002BEE93 /* FileManagerService.swift */; };
 		ECF59D692A3266A6002BEE93 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF59D682A3266A6002BEE93 /* Content.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +31,13 @@
 /* Begin PBXFileReference section */
 		EC095B5E2A34531C00F715AE /* UIViewController+TextPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TextPicker.swift"; sourceTree = "<group>"; };
 		EC095B602A366E2800F715AE /* UIViewController+PresentImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentImagePicker.swift"; sourceTree = "<group>"; };
+		EC7E585F2A3C89A400F03E3D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EC7E58652A3CB83B00F03E3D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EC7E58682A3CDC3100F03E3D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		EC7E586D2A3F7FAD00F03E3D /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
+		EC7E58702A3F881B00F03E3D /* SettingTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableController.swift; sourceTree = "<group>"; };
+		EC7E58722A3F96A600F03E3D /* CurrentFileManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFileManagerService.swift; sourceTree = "<group>"; };
+		EC7E58742A40EB4100F03E3D /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		ECF59D4A2A3263FD002BEE93 /* FileStorageManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileStorageManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF59D4D2A3263FD002BEE93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF59D4F2A3263FD002BEE93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +45,7 @@
 		ECF59D562A3263FE002BEE93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECF59D592A3263FE002BEE93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF59D5B2A3263FE002BEE93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECF59D612A3264CF002BEE93 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		ECF59D612A3264CF002BEE93 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ECF59D652A3265C6002BEE93 /* FileManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerService.swift; sourceTree = "<group>"; };
 		ECF59D682A3266A6002BEE93 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC7E586C2A3DFD8700F03E3D /* KeychainSwift in Frameworks */,
+				EC7E58632A3C953100F03E3D /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +68,26 @@
 			children = (
 				EC095B5E2A34531C00F715AE /* UIViewController+TextPicker.swift */,
 				EC095B602A366E2800F715AE /* UIViewController+PresentImagePicker.swift */,
+				EC7E586D2A3F7FAD00F03E3D /* UIViewController+PresentAlert.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EC7E58642A3CB80D00F03E3D /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				EC7E585F2A3C89A400F03E3D /* LoginViewController.swift */,
+				EC7E58652A3CB83B00F03E3D /* LoginViewModel.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		EC7E58672A3CDC1500F03E3D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC7E58682A3CDC3100F03E3D /* ImagePicker.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		ECF59D412A3263FD002BEE93 = {
@@ -73,11 +109,15 @@
 		ECF59D4C2A3263FD002BEE93 /* FileStorageManager */ = {
 			isa = PBXGroup;
 			children = (
-				EC095B5D2A34530300F715AE /* Extensions */,
-				ECF59D672A326694002BEE93 /* Models */,
 				ECF59D642A3265A6002BEE93 /* App */,
+				EC095B5D2A34530300F715AE /* Extensions */,
+				EC7E58672A3CDC1500F03E3D /* Helpers */,
+				ECF59D672A326694002BEE93 /* Models */,
 				ECF59D632A326597002BEE93 /* Services */,
-				ECF59D612A3264CF002BEE93 /* TableViewController.swift */,
+				EC7E58642A3CB80D00F03E3D /* LoginView */,
+				ECF59D612A3264CF002BEE93 /* MainViewController.swift */,
+				EC7E58702A3F881B00F03E3D /* SettingTableController.swift */,
+				EC7E58742A40EB4100F03E3D /* ChangePasswordViewController.swift */,
 				ECF59D532A3263FD002BEE93 /* Main.storyboard */,
 				ECF59D562A3263FE002BEE93 /* Assets.xcassets */,
 				ECF59D582A3263FE002BEE93 /* LaunchScreen.storyboard */,
@@ -90,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				ECF59D652A3265C6002BEE93 /* FileManagerService.swift */,
+				EC7E58722A3F96A600F03E3D /* CurrentFileManagerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -127,6 +168,10 @@
 			dependencies = (
 			);
 			name = FileStorageManager;
+			packageProductDependencies = (
+				EC7E58622A3C953100F03E3D /* IQKeyboardManagerSwift */,
+				EC7E586B2A3DFD8700F03E3D /* KeychainSwift */,
+			);
 			productName = FileStorageManager;
 			productReference = ECF59D4A2A3263FD002BEE93 /* FileStorageManager.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +200,10 @@
 				Base,
 			);
 			mainGroup = ECF59D412A3263FD002BEE93;
+			packageReferences = (
+				EC7E58612A3C953100F03E3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				EC7E586A2A3DFD8700F03E3D /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = ECF59D4B2A3263FD002BEE93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,9 +235,16 @@
 				EC095B5F2A34531C00F715AE /* UIViewController+TextPicker.swift in Sources */,
 				ECF59D4E2A3263FD002BEE93 /* AppDelegate.swift in Sources */,
 				ECF59D502A3263FD002BEE93 /* SceneDelegate.swift in Sources */,
+				EC7E58602A3C89A400F03E3D /* LoginViewController.swift in Sources */,
 				EC095B612A366E2900F715AE /* UIViewController+PresentImagePicker.swift in Sources */,
-				ECF59D622A3264CF002BEE93 /* TableViewController.swift in Sources */,
+				EC7E58732A3F96A700F03E3D /* CurrentFileManagerService.swift in Sources */,
+				ECF59D622A3264CF002BEE93 /* MainViewController.swift in Sources */,
+				EC7E58692A3CDC3100F03E3D /* ImagePicker.swift in Sources */,
 				ECF59D692A3266A6002BEE93 /* Content.swift in Sources */,
+				EC7E58662A3CB83B00F03E3D /* LoginViewModel.swift in Sources */,
+				EC7E586E2A3F7FAD00F03E3D /* UIViewController+PresentAlert.swift in Sources */,
+				EC7E58712A3F881B00F03E3D /* SettingTableController.swift in Sources */,
+				EC7E58752A40EB4100F03E3D /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +462,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC7E58612A3C953100F03E3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		EC7E586A2A3DFD8700F03E3D /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC7E58622A3C953100F03E3D /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC7E58612A3C953100F03E3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		EC7E586B2A3DFD8700F03E3D /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC7E586A2A3DFD8700F03E3D /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ECF59D422A3263FD002BEE93 /* Project object */;
 }
