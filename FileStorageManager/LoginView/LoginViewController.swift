@@ -18,8 +18,16 @@ class LoginViewController: UIViewController {
             guard let self = self else { return }
             
             switch result {
-            case .success:
-                self.performSegue(withIdentifier: "pushToMainTable", sender: self)
+            case .success(let isPasswordStored):
+                if isPasswordStored as? Bool == false {
+                    presentAlert(message: "Новый пароль успешно сохранен", handler: { [weak self] in
+                        self?.performSegue(withIdentifier: "pushToMainTable", sender: self)
+                        
+                    })
+                } else {
+                    self.performSegue(withIdentifier: "pushToMainTable", sender: self)
+                }
+                    
             case .failure(let error):
                 presentAlert(message: error.rawValue)
             }
@@ -61,6 +69,10 @@ class LoginViewController: UIViewController {
             case .passwordStored:
                 self?.passwordField.placeholder = "Введите пароль"
                 self?.loginButton.setTitle("Войти", for: .normal)
+            case .repeatNewPassword:
+                self?.passwordField.text = nil
+                self?.passwordField.placeholder = "Повторите новый пароль"
+                self?.loginButton.setTitle("Подтвердить пароль", for: .normal)
             }
         }
         viewModel?.updateState()

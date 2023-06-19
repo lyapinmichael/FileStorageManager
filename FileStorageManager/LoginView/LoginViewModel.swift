@@ -12,6 +12,7 @@ enum PasswordError: String, Error {
     case emptyPasswordStored = "Пароль не может быть пустым. Пожалуйста, введите правильный пароль."
     case passwordTooShort = "Пароль слишком короткий. Пароль должен состоять не менее, чем из 5 символов. Пожалуйста, придумайте более сложный пароль."
     case wrongPassword = "Неверный пароль. Попробуйте снова."
+    case passwordsNotMatching = "Пароли не совпадают."
 }
 
 class LoginViewModel {
@@ -20,6 +21,7 @@ class LoginViewModel {
         case initial
         case passwordStored
         case passwordNotCreated
+        case repeatNewPassword
     }
     
     enum UserInput {
@@ -34,6 +36,7 @@ class LoginViewModel {
     
     var onStateDidChange: ((State) -> Void)?
     
+    private var intermediatePassword: String?
     private let keychain = KeychainSwift()
     
     init() {
@@ -72,9 +75,9 @@ class LoginViewModel {
                     return
                 }
                 
-                keychain.set(safePassword, forKey: "password")
-                state = .passwordStored
-                completion?(.success(true))
+                intermediatePassword = safePassword
+                state = .repeatNewPassword
+                return 
             }
             
             if case .passwordStored = state {
@@ -85,6 +88,21 @@ class LoginViewModel {
                 }
                 
                 completion?(.success(true))
+            }
+            
+            if case .repeatNewPassword = state {
+                guard let intermediatePassword = self.intermediatePassword else {
+                    return
+                }
+                
+                guard intermediatePassword == safePassword else {
+                    completion?(.failure(.passwordsNotMatching))
+                    return
+                }
+                
+                keychain.set(safePassword, forKey: "password")
+                state = .passwordStored
+                completion?(.success(false))
             }
     
         }
